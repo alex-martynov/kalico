@@ -38,6 +38,7 @@ SOURCE_FILES = [
     "kin_extruder.c",
     "kin_shaper.c",
     "kin_idex.c",
+    'kin_generic.c'
 ]
 DEST_LIB = "c_helper.so"
 OTHER_FILES = [
@@ -127,6 +128,12 @@ defs_trapq = """
 
 defs_kin_cartesian = """
     struct stepper_kinematics *cartesian_stepper_alloc(char axis);
+"""
+defs_kin_generic_cartesian = """
+    struct stepper_kinematics *generic_cartesian_stepper_alloc(double a_x
+        , double a_y, double a_z);
+    void generic_cartesian_stepper_set_coeffs(struct stepper_kinematics *sk
+        , double a_x, double a_y, double a_z);
 """
 
 defs_kin_corexy = """
@@ -258,6 +265,7 @@ defs_all = [
     defs_kin_extruder,
     defs_kin_shaper,
     defs_kin_idex,
+    defs_kin_generic_cartesian,
 ]
 
 
