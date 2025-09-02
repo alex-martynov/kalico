@@ -326,7 +326,7 @@ class ToolHead:
         kin_name = config.get("kinematics")
         try:
             mod = importlib.import_module("klippy.kinematics." + kin_name)
-            self.kin = mod.load_kinematics(self, config)
+            #self.kin = mod.load_kinematics(self, config)
         except config.error as e:
             raise
         except self.printer.lookup_object("pins").error as e:
