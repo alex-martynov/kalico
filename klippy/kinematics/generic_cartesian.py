@@ -5,7 +5,8 @@
 # This file may be distributed under the terms of the GNU GPLv3 license.
 
 import copy, itertools, logging, math
-import gcode, mathutil, stepper
+import gcode, mathutil
+from klippy import stepper
 from . import idex_modes
 from . import kinematic_stepper as ks
 
